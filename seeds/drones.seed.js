@@ -16,6 +16,13 @@ mongoose.connect("mongodb://127.0.0.1:27017/lab-express-drones")
     console.log(response)
     return Drone.create(allDrone)
   })
+  .then(() => {
+    console.log("drone agregado")
+    return mongoose.disconnect()
+  })
+  .then(() => {
+    console.log("conexion a la DB cerrada")
+  })
   .catch ((err) => {
     console.log(err)
   })
